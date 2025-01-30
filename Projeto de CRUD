@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas Completa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+    <div class="container">
+        <h1>Minhas Tarefas</h1>
+        <button id="themeToggle">Alternar Tema</button>
+
+        <form id="taskForm">
+            <input type="text" id="taskInput" placeholder="Adicionar nova tarefa" required>
+            <select id="priorityInput">
+                <option value="alta">Alta</option>
+                <option value="media">Média</option>
+                <option value="baixa">Baixa</option>
+                <input type="date" id="dueDateInput" required>
+                <button type="submit">Adicionar</button>
+            </select>
+        </form>
+
+        <div class="filters">
+            <button id="filterAll">Todas</button>
+            <button id="filterCompleted">Concluídas</button>
+            <button id="filterPending">Pendentes</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div id="progressBarContainer">
+            <div id="progressBar"></div>
+        </div>
+
+        <div id="congratsMessage" class="hidden">
+            <p>Parabéns! Você completou todas as tarefas!</p>
+            <form id="newGoalForm">
+                <input type="text" id="newGoalInput" placeholder="Adicionar nova meta" required>
+                <button type="submit">Adicionar Meta</button>
+            </form>
+        </div>
+
+        <div class="export-import">
+            <button id="exportTasks">Exportar Tarefas</button>
+            <input type="file" id="importFile" accept=".json" style="display: none;">
+            <button id="importTasks">Importar Tarefas</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
